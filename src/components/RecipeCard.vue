@@ -386,7 +386,12 @@ const generateImage = async () => {
         GalleryService.addToGallery(props.recipe, image.url, image.id, prompt)
     } catch (error) {
         console.error('生成图片失败:', error)
-        imageError.value = 'AI画师表示这道菜太有艺术挑战性了，哈哈！'
+        // 显示实际的错误信息，帮助用户诊断问题
+        if (error instanceof Error) {
+            imageError.value = error.message || 'AI画师表示这道菜太有艺术挑战性了，哈哈！'
+        } else {
+            imageError.value = '生成图片失败，请检查控制台查看详细错误信息'
+        }
     } finally {
         isGeneratingImage.value = false
         if (imageLoadingInterval) {

@@ -24,7 +24,7 @@
                         <!-- 操作按钮 -->
                         <div class="flex items-center gap-2">
                             <router-link
-                                to="/create-recipe"
+                                to="/create"
                                 class="px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium border-2 border-[#0A0910] transition-all duration-200 hover:scale-105"
                             >
                                 ✍️ 创建菜谱
@@ -133,7 +133,7 @@
                             <div class="flex items-center gap-2">
                                 <router-link
                                     v-if="favorite.recipe.source === 'manual'"
-                                    :to="`/create-recipe?id=${favorite.recipe.id}`"
+                                    :to="`/create?id=${favorite.recipe.id}`"
                                     class="text-green-500 hover:text-green-600 text-sm"
                                     title="编辑菜谱"
                                 >

@@ -33,96 +33,29 @@
                         <span>主页</span>
                     </router-link>
                     <router-link
-                        to="/today-eat"
+                        to="/create"
                         class="flex items-center gap-1 px-3 py-2 rounded-lg font-bold border-2 border-[#0A0910] transition-all duration-200 transform hover:scale-105 text-sm"
-                        :class="$route.path === '/today-eat' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                        :class="$route.path === '/create' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
                     >
-                        <span>🎲</span>
-                        <span>美食盲盒</span>
+                        <span>✍️</span>
+                        <span>创建菜谱</span>
                     </router-link>
                     <router-link
-                        to="/table-design"
+                        to="/favorites"
                         class="flex items-center gap-1 px-3 py-2 rounded-lg font-bold border-2 border-[#0A0910] transition-all duration-200 transform hover:scale-105 text-sm"
-                        :class="$route.path === '/table-design' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                        :class="$route.path === '/favorites' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
                     >
-                        <span>🍽️</span>
-                        <span>满汉全席</span>
+                        <span>❤️</span>
+                        <span>我的收藏</span>
                     </router-link>
                     <router-link
-                        to="/fortune-cooking"
+                        to="/about"
                         class="flex items-center gap-1 px-3 py-2 rounded-lg font-bold border-2 border-[#0A0910] transition-all duration-200 transform hover:scale-105 text-sm"
-                        :class="$route.path === '/fortune-cooking' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                        :class="$route.path === '/about' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
                     >
-                        <span>🔮</span>
-                        <span>玄学厨房</span>
+                        <span>📖</span>
+                        <span>关于</span>
                     </router-link>
-                    <router-link
-                        to="/sauce-design"
-                        class="flex items-center gap-1 px-3 py-2 rounded-lg font-bold border-2 border-[#0A0910] transition-all duration-200 transform hover:scale-105 text-sm"
-                        :class="$route.path === '/sauce-design' ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
-                    >
-                        <span>🥄</span>
-                        <span>酱料大师</span>
-                    </router-link>
-
-                    <!-- 更多菜单下拉 -->
-                    <div class="relative" @mouseleave="handleMouseLeave">
-                        <button
-                            @mouseenter="handleMouseEnter"
-                            @click="showMoreMenu = !showMoreMenu"
-                            :class="[
-                                'flex items-center gap-1 px-3 py-2 rounded-lg font-bold border-2 border-[#0A0910] transition-all duration-200 transform hover:scale-105 text-sm',
-                                isMoreMenuActive ? 'bg-yellow-400 text-gray-800' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                            ]"
-                        >
-                            <span>⋯</span>
-                            <span>更多</span>
-                        </button>
-
-                        <!-- 下拉菜单 -->
-                        <div
-                            v-if="showMoreMenu"
-                            @mouseenter="handleMouseEnter"
-                            class="absolute right-0 top-full mt-0.5 w-40 bg-white border-2 border-[#0A0910] rounded-lg shadow-lg z-50 overflow-hidden"
-                        >
-                            <router-link
-                                to="/favorites"
-                                @click="showMoreMenu = false"
-                                class="flex items-center gap-2 px-4 py-3 text-sm font-bold transition-colors duration-200 hover:bg-gray-100"
-                                :class="$route.path === '/favorites' ? 'bg-yellow-100 text-gray-800' : 'text-gray-700'"
-                            >
-                                <span>❤️</span>
-                                <span>我的收藏</span>
-                            </router-link>
-                            <router-link
-                                to="/create-recipe"
-                                @click="showMoreMenu = false"
-                                class="flex items-center gap-2 px-4 py-3 text-sm font-bold transition-colors duration-200 hover:bg-gray-100"
-                                :class="$route.path === '/create-recipe' ? 'bg-yellow-100 text-gray-800' : 'text-gray-700'"
-                            >
-                                <span>✍️</span>
-                                <span>创建菜谱</span>
-                            </router-link>
-                            <router-link
-                                to="/gallery"
-                                @click="showMoreMenu = false"
-                                class="flex items-center gap-2 px-4 py-3 text-sm font-bold transition-colors duration-200 hover:bg-gray-100"
-                                :class="$route.path === '/gallery' ? 'bg-yellow-100 text-gray-800' : 'text-gray-700'"
-                            >
-                                <span>🖼️</span>
-                                <span>封神图鉴</span>
-                            </router-link>
-                            <router-link
-                                to="/about"
-                                @click="showMoreMenu = false"
-                                class="flex items-center gap-2 px-4 py-3 text-sm font-bold transition-colors duration-200 hover:bg-gray-100"
-                                :class="$route.path === '/about' ? 'bg-yellow-100 text-gray-800' : 'text-gray-700'"
-                            >
-                                <span>📖</span>
-                                <span>关于我们</span>
-                            </router-link>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -170,40 +103,13 @@
                                 <span>主页</span>
                             </router-link>
                             <router-link
-                                to="/today-eat"
+                                to="/create"
                                 @click="showMobileMenu = false"
                                 class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/today-eat' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
+                                :class="$route.path === '/create' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
                             >
-                                <span>🎲</span>
-                                <span>美食盲盒</span>
-                            </router-link>
-                            <router-link
-                                to="/table-design"
-                                @click="showMobileMenu = false"
-                                class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/table-design' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
-                            >
-                                <span>🍽️</span>
-                                <span>满汉全席</span>
-                            </router-link>
-                            <router-link
-                                to="/sauce-design"
-                                @click="showMobileMenu = false"
-                                class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/sauce-design' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
-                            >
-                                <span>🥄</span>
-                                <span>酱料大师</span>
-                            </router-link>
-                            <router-link
-                                to="/fortune-cooking"
-                                @click="showMobileMenu = false"
-                                class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/fortune-cooking' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
-                            >
-                                <span>🔮</span>
-                                <span>玄学厨房</span>
+                                <span>✍️</span>
+                                <span>创建菜谱</span>
                             </router-link>
                             <router-link
                                 to="/favorites"
@@ -215,37 +121,16 @@
                                 <span>我的收藏</span>
                             </router-link>
                             <router-link
-                                to="/create-recipe"
-                                @click="showMobileMenu = false"
-                                class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/create-recipe' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
-                            >
-                                <span>✍️</span>
-                                <span>创建菜谱</span>
-                            </router-link>
-                            <router-link
-                                to="/gallery"
-                                @click="showMobileMenu = false"
-                                class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
-                                :class="$route.path === '/gallery' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
-                            >
-                                <span>🖼️</span>
-                                <span>封神图鉴</span>
-                            </router-link>
-                            <router-link
                                 to="/about"
                                 @click="showMobileMenu = false"
                                 class="flex items-center gap-1.5 px-3 py-2 rounded-full font-bold border-2 border-[#0A0910] transition-all duration-200 whitespace-nowrap text-sm"
                                 :class="$route.path === '/about' ? 'bg-yellow-400 text-gray-800 shadow-md' : 'bg-white text-gray-700 hover:bg-gray-50 active:scale-95'"
                             >
                                 <span>📖</span>
-                                <span>关于我们</span>
+                                <span>关于</span>
                             </router-link>
                         </div>
                     </div>
-
-                    <!-- 滚动提示 -->
-                    <div class="text-center text-xs text-gray-500 mt-1">← 左右滑动查看更多功能 →</div>
                 </div>
             </div>
         </div>
@@ -258,9 +143,7 @@ import { useRoute } from 'vue-router'
 import SettingsButton from './SettingsButton.vue'
 
 const showMobileMenu = ref(false)
-const showMoreMenu = ref(false)
 const isLogoRotating = ref(false)
-let hideMenuTimer: NodeJS.Timeout | null = null
 
 const rotateLogo = () => {
     isLogoRotating.value = true
@@ -275,22 +158,10 @@ const pageTitle = computed(() => {
     switch (route.path) {
         case '/':
             return 'What to Eat'
-        case '/today-eat':
-            return '今日吃啥'
-        case '/table-design':
-            return '一桌好菜师'
-        case '/how-to-cook':
-            return '菜谱指南'
-        case '/sauce-design':
-            return '酱料设计大师'
-        case '/fortune-cooking':
-            return '玄学厨房'
+        case '/create':
+            return '创建菜谱'
         case '/favorites':
             return '我的收藏'
-        case '/create-recipe':
-            return '创建菜谱'
-        case '/gallery':
-            return '封神图鉴'
         case '/about':
             return 'About What to Eat'
         default:
@@ -302,49 +173,16 @@ const pageSubtitle = computed(() => {
     switch (route.path) {
         case '/':
             return 'AI Recipe Generator & Personal Recipe Manager'
-        case '/today-eat':
-            return "盲盒美食：'绝了！' or '寄了！'"
-        case '/table-design':
-            return '让每顿饭，都有剧本！'
-        case '/how-to-cook':
-            return 'AI大师手把手教学！'
-        case '/sauce-design':
-            return '专业酱料制作，调味灵魂升华！'
-        case '/fortune-cooking':
-            return '星辰指引美食，占卜预见美味！'
+        case '/create':
+            return '记录你的独家秘方！'
         case '/favorites':
             return '珍藏美味，随时回味！'
-        case '/create-recipe':
-            return '记录你的独家秘方！'
-        case '/gallery':
-            return '每一帧都是厨艺的封神时刻！'
         case '/about':
             return 'AI Recipe Generator & Personal Recipe Manager'
         default:
-            return 'LEGENDARY STATUS FROM A SINGLE MEAL!'
+            return 'AI Recipe Generator & Personal Recipe Manager'
     }
 })
-
-// 检查更多菜单中的页面是否处于活跃状态
-const isMoreMenuActive = computed(() => {
-    return ['/favorites', '/create-recipe', '/gallery', '/about'].includes(route.path)
-})
-
-// 处理鼠标进入事件
-const handleMouseEnter = () => {
-    if (hideMenuTimer) {
-        clearTimeout(hideMenuTimer)
-        hideMenuTimer = null
-    }
-    showMoreMenu.value = true
-}
-
-// 处理鼠标离开事件
-const handleMouseLeave = () => {
-    hideMenuTimer = setTimeout(() => {
-        showMoreMenu.value = false
-    }, 150) // 150ms延迟，给用户足够时间移动鼠标
-}
 </script>
 
 <style scoped>
