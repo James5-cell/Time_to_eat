@@ -274,7 +274,7 @@ const route = useRoute()
 const pageTitle = computed(() => {
     switch (route.path) {
         case '/':
-            return '一饭封神'
+            return 'What to Eat'
         case '/today-eat':
             return '今日吃啥'
         case '/table-design':
@@ -292,16 +292,16 @@ const pageTitle = computed(() => {
         case '/gallery':
             return '封神图鉴'
         case '/about':
-            return '关于一饭封神'
+            return 'About What to Eat'
         default:
-            return '一饭封神'
+            return 'What to Eat'
     }
 })
 
 const pageSubtitle = computed(() => {
     switch (route.path) {
         case '/':
-            return '灶间有AI，顿顿米其林！'
+            return 'AI Recipe Generator & Personal Recipe Manager'
         case '/today-eat':
             return "盲盒美食：'绝了！' or '寄了！'"
         case '/table-design':
@@ -319,7 +319,7 @@ const pageSubtitle = computed(() => {
         case '/gallery':
             return '每一帧都是厨艺的封神时刻！'
         case '/about':
-            return '算法烹万物，一键即封神！'
+            return 'AI Recipe Generator & Personal Recipe Manager'
         default:
             return 'LEGENDARY STATUS FROM A SINGLE MEAL!'
     }

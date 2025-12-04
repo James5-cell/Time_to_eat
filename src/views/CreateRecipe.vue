@@ -445,7 +445,7 @@ const handleSubmit = async () => {
                 // 更新现有收藏的recipe
                 favorites[favoriteIndex].recipe = recipe
                 // 保存回localStorage
-                localStorage.setItem('yifan-fengshen-favorites', JSON.stringify(favorites))
+                localStorage.setItem('what-to-eat-favorites', JSON.stringify(favorites))
             } else {
                 // 如果找不到，就添加新的
                 FavoriteService.addFavorite(recipe)
